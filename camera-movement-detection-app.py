@@ -127,7 +127,7 @@ def process_video(video_path, detector):
 
     while True:
         ret, frame = cap.read()
-        if not ret:
+        if not ret or frame is None:
             break
         frame = imutils.resize(frame, width=400)
         frame = cv2.resize(frame, (400, int(frame.shape[0] * 400 / frame.shape[1])))
