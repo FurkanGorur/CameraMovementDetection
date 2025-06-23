@@ -127,9 +127,16 @@ def process_video(video_path, detector):
 
     while True:
         ret, frame = cap.read()
+
+    # Kare okunamadıysa döngüden çık
         if not ret or frame is None:
             break
-        frame = imutils.resize(frame, width=400)
+
+        try:
+            frame = imutils.resize(frame, width=400)
+        except AttributeError as e:
+            st.warning(f"Bir kare işlenemedi: {e}")
+            continue
         
 
         if prev_frame is None:
