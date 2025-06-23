@@ -1,4 +1,4 @@
-ENGLISH
+English
 
 
 When the file is run, the streamlit interface opens, and camera movements in the images are detected and the information is given as output, whether using a camera or uploading a video.
